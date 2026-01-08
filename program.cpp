@@ -25,11 +25,11 @@ private:
         {
             int numper = 0;
             cin >> numper;
-            if (numper > 7 || numper < 1 || cin.fail())
+            if (numper > 8 || numper < 1 || cin.fail())
             {
                 cin.clear();
                 cin.ignore(10000, '\n');
-                cout << "Please enter only a positive number [ from 1 too 6 ] !\n";
+                cout << "Please enter only a positive number [ from 1 too 7 ] !\n";
 
             }
             else
@@ -49,7 +49,12 @@ private:
         info._LastOperation = "adding";
         info._resolt += numper;
     }
-
+    void CancelLastOperation()
+    {
+        _LastNumber = 0;
+        _LastOperation = "Cancelling Last Operation";
+        _Result = _PreviousResult;
+    }
     void Subtract()
     {
         cout << "Subtract numper -\n";
@@ -112,9 +117,10 @@ private:
         cout << " numper 2 = [-]  \n";
         cout << " numper 3 = [/]  \n";
         cout << " numper 4 = [*]  \n";
-        cout << " numper 5 = [ clear screen    ]  \n";
-        cout << " numper 6 = [ clear result    ]  \n";
-        cout << " numper 7 = [ closing program ]  \n";
+        cout << " mumper 5 = [ CancelLastOperation ]\n";
+        cout << " numper 6 = [ clear screen        ]  \n";
+        cout << " numper 7 = [ clear result        ]  \n";
+        cout << " numper 8 = [ closing program     ]  \n";
     }
     void close()
     {
@@ -141,9 +147,10 @@ public:
             case 2:Subtract(), printresolt();system("color 27");break;
             case 3:Divide(), printresolt();system("color 37");break;
             case 4:Multiply(), printresolt();system("color 47");break;
-            case 5:clearscreen(), printresolt();system("color 57");break;
-            case 6:clearresolt();system("color 67");break;
-            case 7:system("color 07");return;
+            case 5:CancelLastOperation();system("color D7");break;
+            case 6:clearscreen(), printresolt();system("color 57");break;
+            case 7:clearresolt();system("color 67");break;
+            case 8:system("color 07");return;
             }
         }
     }
