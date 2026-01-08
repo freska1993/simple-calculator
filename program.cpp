@@ -51,9 +51,9 @@ private:
     }
     void CancelLastOperation()
     {
-        _LastNumber = 0;
-        _LastOperation = "Cancelling Last Operation";
-        _Result = _PreviousResult;
+        info._lastnumper = 0;
+        info._LastOperation = "Cancelling Last Operation";
+        info._resolt = info._PreviousResult;
     }
     void Subtract()
     {
