@@ -29,7 +29,7 @@ private:
             {
                 cin.clear();
                 cin.ignore(10000, '\n');
-                cout << "Please enter only a positive number [ from 1 too 7 ] !\n";
+                cout << "Please enter only a positive number [ from 1 too 8 ] !!\n";
 
             }
             else
